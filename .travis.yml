@@ -7,7 +7,7 @@ services:
   - docker
 
 script:
-  - docker build -t xuyuji9000/reactjs-multi-stage-build-playground .
+  - docker build -t $DOCKER_USERNAME/reactjs-multi-stage-build-playground .
 
 deploy:
   provider: script
