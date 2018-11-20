@@ -6,3 +6,8 @@ services:
 before_install:
   - docker build -t xuyuji9000/reactjs-multi-stage-build-playground .
 
+deploy:
+  provider: script
+  script: bash docker_push.sh yogiman reactjs-multi-stage-build-playground
+  on:
+    branch: master
