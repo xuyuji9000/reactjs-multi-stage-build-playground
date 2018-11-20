@@ -1,9 +1,12 @@
 sudo: required
 
+language:
+  - bash
+
 services:
   - docker
 
-before_install:
+script:
   - docker build -t xuyuji9000/reactjs-multi-stage-build-playground .
 
 deploy:
