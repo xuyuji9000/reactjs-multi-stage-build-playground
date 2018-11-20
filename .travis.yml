@@ -2,3 +2,7 @@ sudo: required
 
 services:
   - docker
+
+before_install:
+  - docker build -t xuyuji9000/reactjs-multi-stage-build-playground .
+
