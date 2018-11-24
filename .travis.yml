@@ -11,6 +11,6 @@ script:
 
 deploy:
   provider: script
-  script: bash docker_push.sh $DOCKER_USERNAME reactjs-multi-stage-build-playground
+  script: bash docker_push.sh
   on:
     branch: master
