@@ -7,5 +7,5 @@ DATE_IMAGE="$DOCKER_USERNAME"/$1:`date +%Y-%m-%d`
 docker push $LATEST_IMAGE
 
 echo `date +%Y-%m-%d`
-dokcer tag  $LATEST_IMAGE $DATE_IMAGE
+docker tag  $LATEST_IMAGE $DATE_IMAGE
 docker push $DATE_IMAGE
