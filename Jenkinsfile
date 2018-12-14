@@ -32,7 +32,11 @@ pipeline {
       }
       post {
         always {
-          step([$class: 'CoberturaPublisher', coberturaReportFile: 'source/coverage/cobertura-coverage.xml'])
+          step([$class: 'CoberturaPublisher',
+                coberturaReportFile: 'source/coverage/cobertura-coverage.xml',
+                failUnhealthy: true,
+                failUnstable: true,
+                lineCoverageTargets: '90.0, 80.1, 50'])
         }
       }
     }
