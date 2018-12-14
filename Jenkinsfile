@@ -32,7 +32,7 @@ pipeline {
       }
       post {
         always {
-          step([$class: 'CoberturaPublisher', coberturaReportFile: "${SOURCE_PATH}coverage/cobertura-coverage.xml"])
+          step([$class: 'CoberturaPublisher', coberturaReportFile: 'source/coverage/cobertura-coverage.xml'])
         }
       }
     }
