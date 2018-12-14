@@ -26,7 +26,13 @@ pipeline {
           cd $SOURCE_PATH
           ls -lat
           . ./build-test.sh
+          . ./copy-coverage.sh
           '''
+        }
+        post {
+          always {
+            step([$class: 'CoberturaPublisher', coberturaReportFile: 'coverage/cobertura-coverage.xml'])
+          }
         }
       }
     }
