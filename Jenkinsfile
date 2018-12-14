@@ -15,9 +15,17 @@ pipeline {
     }
 
     stage('Test') {
+      environment {
+        SOURCE_PATH = "${env.WORKSPACE}/source/"
+      }
       steps {
         script {
-          sh '. ./build-test.sh'
+          sh '''
+          ls -lat
+          cd $SOURCE_PATH
+          ls -lat
+          . ./build-test.sh
+          '''
         }
       }
     }
