@@ -7,5 +7,5 @@ RUN yarn
 COPY . ./
 
 # Prepare test
-RUN yarn test
+RUN yarn test -- --coverage
 RUN yarn build
