@@ -21,6 +21,7 @@ pipeline {
       steps {
         script {
           sh '''
+          echo $USER
           ls -lat
           cd $SOURCE_PATH
           ls -lat
