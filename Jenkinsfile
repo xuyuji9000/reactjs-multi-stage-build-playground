@@ -52,5 +52,16 @@ pipeline {
         }
       }
     }
+
+    stage("Deploy") {
+      steps {
+        script {
+          sh '''
+          pwd
+          ls -lat
+          '''
+        }
+      }
+    }
   }
 }
