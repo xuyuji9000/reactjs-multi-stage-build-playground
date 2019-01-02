@@ -9,9 +9,7 @@ pipeline {
     stage('Checkout') {
       steps {
         deleteDir()
-        dir('source') {
-          checkout scm
-        }
+        checkout scm
       }
     }
 
