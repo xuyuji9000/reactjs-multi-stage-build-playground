@@ -4,6 +4,9 @@ pipeline {
       label 'jenkins-slave'
     }
   }
+
+  tools {nodejs "node"}
+
   stages {
     stage('Checkout') {
       steps {
