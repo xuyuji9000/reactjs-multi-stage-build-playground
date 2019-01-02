@@ -45,6 +45,7 @@ pipeline {
           sh '''
           node --version
           pwd
+          ls -lat
           npm build
           '''
         }
