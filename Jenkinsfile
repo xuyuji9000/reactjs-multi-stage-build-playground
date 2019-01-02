@@ -5,8 +5,6 @@ pipeline {
     }
   }
 
-  tools {nodejs "node"}
-
   stages {
     stage('Checkout') {
       steps {
@@ -48,6 +46,8 @@ pipeline {
         script {
           sh '''
           node --version
+          pwd
+          npm build
           '''
         }
       }
