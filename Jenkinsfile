@@ -46,7 +46,7 @@ pipeline {
           node --version
           pwd
           ls -lat
-          npm build
+          npm run-script build
           '''
         }
       }
