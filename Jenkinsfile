@@ -14,29 +14,38 @@ pipeline {
       }
     }
 
-    stage('Test') {
-      environment {
-        SOURCE_PATH = "${env.WORKSPACE}/source/"
-      }
+    // stage('Test') {
+    //   environment {
+    //     SOURCE_PATH = "${env.WORKSPACE}/source/"
+    //   }
+    //   steps {
+    //     script {
+    //       sh '''
+    //       echo $USER
+    //       ls -lat
+    //       cd $SOURCE_PATH
+    //       ls -lat
+    //       . ./build-test.sh
+    //       . ./copy-coverage.sh
+    //       '''
+    //     }
+    //   }
+    //   post {
+    //     always {
+    //       step([$class: 'CoberturaPublisher',
+    //             coberturaReportFile: 'source/coverage/cobertura-coverage.xml',
+    //             failUnhealthy: true,
+    //             failUnstable: true,
+    //             lineCoverageTargets: '90.0, 80.1, 50'])
+    //     }
+    //   }
+    // }
+    stage("Build") {
       steps {
         script {
           sh '''
-          echo $USER
-          ls -lat
-          cd $SOURCE_PATH
-          ls -lat
-          . ./build-test.sh
-          . ./copy-coverage.sh
+          node --version
           '''
-        }
-      }
-      post {
-        always {
-          step([$class: 'CoberturaPublisher',
-                coberturaReportFile: 'source/coverage/cobertura-coverage.xml',
-                failUnhealthy: true,
-                failUnstable: true,
-                lineCoverageTargets: '90.0, 80.1, 50'])
         }
       }
     }
