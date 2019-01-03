@@ -59,10 +59,10 @@ pipeline {
         AWS_ACCESS_KEY_ID = "${env.AWS_ID_USR}"
         AWS_SECRET_ACCESS_KEY = "${env.AWS_ID_PSW}"
         AWS_DEFAULT_OUTPUT = 'json'
+        S3_BUCKET_NAME = "s3://s3-static-site.yogiman.cn"
       }
       steps {
         script {
-          def S3_BUCKET_NAME="s3://s3-static-site.yogiman.cn"
           sh '''
           pwd
           ls -lat
