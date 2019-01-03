@@ -66,7 +66,6 @@ pipeline {
           sh '''
           pwd
           ls -lat
-          aws s3 ls $S3_BUCKET_NAME
           aws s3 cp ./build/* $S3_BUCKET_NAME
           '''
         }
