@@ -54,8 +54,15 @@ pipeline {
     }
 
     stage("Deploy") {
+      environment {
+        AWS_ID = credentials("aws-iam-user-for-pipeline")
+        AWS_ACCESS_KEY_ID = "${env.AWS_ID_USR}"
+        AWS_SECRET_ACCESS_KEY = "${env.AWS_ID_PSW}"
+        AWS_DEFAULT_OUTPUT = 'json'
+      }
       steps {
         script {
+          def S3_BUCKET_NAME="s3://s3-static-site.yogiman.cn"
           sh '''
           pwd
           ls -lat
