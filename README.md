@@ -7,3 +7,4 @@
 
 2. [Running tests and creating code coverage reports for React / NodeJS project continuously with Jenkins Pipelines, Jest & Cobertura or Jest-JUnit and push to Artifactory
 ](https://medium.com/@elisegev/running-tests-and-creating-code-coverage-reports-for-react-nodejs-project-continuously-with-60312b6a2dd0)
+
